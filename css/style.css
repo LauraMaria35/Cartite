@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+img{
+    display: block;
+}
+
+#game {
+    width: 960px;
+    height: 500px;
+    position: relative;
+    background-color:#d0f3ff;
+}
+
+#messageText {
+    font-size: 20px;
+    color: deeppink;
+}
+
+#counter-display{
+    font-size: 20px;
+}
+
+#bg{
+    position: absolute;
+    top: 125px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #b9edff;
+    
+}
+
+#fg {
+    position: absolute;
+    top: 200px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(../img/soil.jpeg);
+    width: 960px;
+}
+
+#under{
+    position: absolute;
+    top: 440px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    height: 100px;
+}
+
+#moles {
+    position: absolute;
+    top: 235px;
+    left: 100px;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+}
+
+.mole {
+    width: 150px;
+    transform: translate(-185px);
+    animation: peep 6s infinite;
+}
+
+@keyframes peep{
+    0%, 15%, 100% {
+        transform:translateY(0px)
+    }
+
+    6%{
+        transform: translateY(-185px)
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Mole wack</title>
+</head>
+
+<body>
+    <div><h1>Prinde cârtițele!</h1></div>
+    <div id="game">
+        <div id="messageText"></div>
+        <div id="counter-display">0</div>
+        <div id="bg"></div>
+        <div id="moles">
+            <div><img class="mole" data-punten="1" data-naam="Joey" src="img/SeekPng.com_mole-png_1024075.png"
+                    alt="Mole1" width="150"></div>
+            <div><img class="mole" data-punten="2" data-naam="Esmee" src="img/SeekPng.com_mole-png_1024075.png"
+                    alt="Mole2" width="150"></div>
+            <div><img class="mole" data-punten="5" data-naam="Didi" src="img/SeekPng.com_mole-png_1024075.png"
+                    alt="Mole3" width="150"></div>
+        </div>
+        <div id="fg"></div>
+        <div id="under"></div>
+    </div>
+
+    <script>
+        let counterDisplayElem = document.querySelector('#counter-display');
+        let mole = document.querySelectorAll('.mole');
+        let tekst = document.querySelector('#messageText');
+        let count = 0;
+
+        for (let i = 0; i < mole.length; i++) {
+            mole[i].style.animationDelay = `${Math.random() * 5}s`;
+            mole[i].addEventListener('mousedown', clickMole);
+            mole[i].addEventListener('animationiteration', resetMole);
+
+            function clickMole(evt) {
+                let geraakteMol = evt.target;
+                let puntenGeraakte = geraakteMol.getAttribute("data-punten");
+                let naamMole = geraakteMol.getAttribute("data-naam");
+                counterDisplayElem.innerHTML = count;
+                count += parseInt(puntenGeraakte);
+                evt.target.style.backgroundColor = 'red';
+                
+                if (count > 1) {
+                    counterDisplayElem.innerHTML = "Total: " + count + " puncte";
+
+                } else {
+                    counterDisplayElem.innerHTML = "Total: " + count + " punct";
+                }
+
+                if (i == 0) {
+                    tekst.innerHTML = "L-ai prins pe Joey! Ai acumulat 1 punct.";
+                } else {
+                    tekst.innerHTML = "L-ai prins pe " + naamMole + "! Ai acumulat " + puntenGeraakte + " puncte.";
+                }
+            }
+            function resetMole(evt) {
+                console.log('animation restarted')
+                evt.target.style.backgroundColor = '';
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
