@@ -52,11 +52,14 @@
                 } else {
                     counterDisplayElem.innerHTML = "Total: " + count + " punct";
                 }
-
+                var audio = new Audio('squeak.wav');
                 if (i == 0) {
                     tekst.innerHTML = "L-ai prins pe Joey! Ai acumulat 1 punct.";
+                    audio.play();
                 } else {
                     tekst.innerHTML = "L-ai prins pe " + naamMole + "! Ai acumulat " + puntenGeraakte + " puncte.";
+                    
+  audio.play();
                 }
             }
             function resetMole(evt) {

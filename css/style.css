@@ -78,11 +78,11 @@ img{
 }
 
 @keyframes peep{
-    0%, 15%, 100% {
+    0%, 20%, 100% {
         transform:translateY(0px)
     }
 
-    6%{
+    8%{
         transform: translateY(-185px)
     }
 }
