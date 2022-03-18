@@ -34,7 +34,9 @@
         let count = 0;
 
         for (let i = 0; i < mole.length; i++) {
-            mole[i].style.animationDelay = `${Math.random() * 5}s`;
+            mole[0].style.animationDelay = `${Math.random() * 5}s`;
+            mole[1].style.animationDelay = `${Math.random() * 5}s`;
+            mole[i].addEventListener('tap', clickMole);
             mole[i].addEventListener('mousedown', clickMole);
             mole[i].addEventListener('animationiteration', resetMole);
 
