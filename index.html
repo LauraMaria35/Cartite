@@ -38,6 +38,7 @@
             mole[1].style.animationDelay = `${Math.random() * 5}s`;
             mole[i].addEventListener('tap', clickMole);
             mole[i].addEventListener('mousedown', clickMole);
+            mole[i].addEventListener('touch', clickMole);
             mole[i].addEventListener('animationiteration', resetMole);
 
             function clickMole(evt) {
